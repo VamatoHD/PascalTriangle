@@ -15,8 +15,8 @@ fn measure<F: Fn(u32) -> Vec<BigUint>>(f: F, times: usize, max: f32) -> Vec<(f32
     let mut pb = ProgressBar::new(1000);
     pb.format("[=>-]");
 
-    for i in 1..=1000 {
-        let test = i as u32 * 100;
+    for i in 1..=10000 {
+        let test = i as u32 * 50;
 
         let mut total = 0;
         for _ in 1..=times {
@@ -41,9 +41,10 @@ fn measure<F: Fn(u32) -> Vec<BigUint>>(f: F, times: usize, max: f32) -> Vec<(f32
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let a = measure(pascal1, 5, 3.0 * 1000.0);
+    let a = measure(pascal1, 1, 3.0 * 1000.0);
+    let b = measure(pascal2, 1, 3.0 * 1000.0);
 
-    render(&vec![a], "output.png")?;
+    render(&vec![a, b], "output.png")?;
 
     Ok(())
 }
