@@ -14,7 +14,7 @@ pub fn render(data: &Vec<Vec<(f32, f32)>>, output: &str) -> Result<(), Box<dyn s
         .fold(f32::MIN, f32::max);
 
     let mut chart = ChartBuilder::on(&root)
-        .caption("Pascal Tree Performance", ("Arial", 30).into_font())
+        .caption("Pascal Triangle Performance", ("Arial", 30).into_font())
         .margin(5)
         .x_label_area_size(40)
         .y_label_area_size(40)

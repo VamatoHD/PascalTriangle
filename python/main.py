@@ -1,4 +1,4 @@
-def PascalTree(line: int):
+def PascalTriangle(line: int):
     if line == 1:
         return [1]
     cur = [1, 1]
@@ -13,7 +13,7 @@ def PascalTree(line: int):
 def main():
     while True:
         n = int(input("Line: "))
-        line = PascalTree(n)
+        line = PascalTriangle(n)
         print(line)
 
 
